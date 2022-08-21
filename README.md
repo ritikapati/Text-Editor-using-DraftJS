@@ -1,3 +1,5 @@
+The basic component used in Draft-js is an Edit control. If we compare a text input to an Edit control, a Text input has a value that is a text string. In an Edit control, we need more than simple text, we need an object that holds the text, cursor position etc. Instead of just text, we use an EditorState object
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
