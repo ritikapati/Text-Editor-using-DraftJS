@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Editor } from "react-draft-wysiwyg";
+import { EditorState } from "draft-js";
 
-function App() {
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+
+
+
+
+const App = () => {
+  const [editorState, setEditorState] = useState(
+    () => EditorState.createEmpty(),
+  );
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        Rich Text Editor Example
       </header>
+      <Editor
+        editorState={editorState}
+        onEditorStateChange={setEditorState}
+        wrapperClassName="wrapper-class"
+        editorClassName="editor-class"
+        toolbarClassName="toolbar-class"
+      />
     </div>
-  );
+  )
 }
-
 export default App;
